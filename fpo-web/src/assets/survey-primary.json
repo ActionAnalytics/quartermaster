@@ -1,531 +1,99 @@
 {
-    "title": "Job Placement Office - Job Matching Form",
-    "pages": [
+  "title": "Cloud Solution Explorer",
+  "pages": [
+    {
+      "name": "Get Started",
+      "elements": [
         {
-            "name": "Your Information",
-            "elements": [
-                {
-                    "type": "panel",
-                    "name": "ApplicantPanel",
-                    "elements": [
-                        {
-                            "type": "personname",
-                            "name": "ApplicantName",
-                            "title": "What is your full name?",
-                            "description": "Use the name as it is written on your driver's license or other picture ID.",
-                            "isRequired": true,
-                            "defaultSubstitution": "(Applicant Name)"
-                        },
-                        {
-                            "type": "text",
-                            "name": "ApplicantDOB",
-                            "title": "What is your date of birth?",
-                            "isRequired": true,
-                            "inputType": "date"
-                        },
-                        {
-                            "type": "address",
-                            "name": "ApplicantAddress",
-                            "title": "Address",
-                            "isRequired": true,
-                            "referLabel": "Applicant's Address"
-                        },
-                        {
-                            "type": "text",
-                            "name": "ApplicantPhone",
-                            "title": "Phone Number"
-                        },
-                        {
-                            "type": "text",
-                            "name": "ApplicantEmail",
-                            "title": "Email",
-                            "validators": [
-                                {
-                                    "type": "email"
-                                }
-                            ],
-                            "inputType": "email"
-                        },
-                        {
-                            "type": "checkbox",
-                            "name": "ApplicantEducation",
-                            "title": "Highest level of education ",
-                            "isRequired": true,
-                            "choices": [
-                                {
-                                    "value": "Some_High_School",
-                                    "text": "Some high school"
-                                },
-                                {
-                                    "value": "Grade12_GED",
-                                    "text": "Grade 12 or GED"
-                                },
-                                {
-                                    "value": "Some_postSecondary",
-                                    "text": "Some post-secondary"
-                                },
-                                {
-                                    "value": "Trades_Qualification",
-                                    "text": "Trades Qualification"
-                                },
-                                {
-                                    "value": "PostSecondary_diploma",
-                                    "text": "Post-secondary diploma/degree"
-                                },
-                                "Apprentice"
-                            ],
-                            "colCount": 2,
-                            "hasNone": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "Program",
-                            "visible": false,
-                            "visibleIf": "{ApplicantEducation} contains \"PostSecondary_diploma\"",
-                            "title": "Program:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "WhichTrades",
-                            "visible": false,
-                            "visibleIf": "{ApplicantEducation} contains \"Trades_Qualification\"",
-                            "title": "Qualification Type:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "multipletext",
-                            "name": "ApprenticeCertification",
-                            "visible": false,
-                            "visibleIf": "{ApplicantEducation} contains \"Apprentice\"",
-                            "title": "Apprentice certification:",
-                            "isRequired": true,
-                            "items": [
-                                {
-                                    "name": "Trade",
-                                    "title": "Trade:"
-                                },
-                                {
-                                    "name": "Year",
-                                    "title": "Year:"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "yesno",
-                            "name": "AbleToRelocate",
-                            "title": "Are you willing to relocate?",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "PreferredLocation",
-                            "visible": false,
-                            "visibleIf": "{AbleToRelocate} = \"y\"",
-                            "title": "Preferred location:",
-                            "requiredIf": "{AbleToRelocate} = \"y\""
-                        },
-                        {
-                            "type": "yesno",
-                            "name": "AbleToWorkCampJob",
-                            "title": "Would you work in a Camp Job?",
-                            "isRequired": true
-                        }
-                    ]
-                }
-            ],
-            "title": "Your Information"
-        },
-        {
-            "name": "Your Experience",
-            "elements": [
-                {
-                    "type": "panel",
-                    "name": "RespondentPanel",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "name": "Employer",
-                            "width": "50%",
-                            "title": "Current/recent employer:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "YearsofExp",
-                            "width": "50%",
-                            "title": "Years of forestry experience:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "checkbox",
-                            "name": "EquimentsTrained",
-                            "title": "Equipment trained or certified to operate (at current or previous employment)",
-                            "isRequired": true,
-                            "choices": [
-                                {
-                                    "value": "ATL",
-                                    "text": "ATL"
-                                },
-                                {
-                                    "value": "Grader",
-                                    "text": "Grader"
-                                },
-                                {
-                                    "value": "Dozer",
-                                    "text": "Dozer"
-                                },
-                                {
-                                    "value": "Excavator",
-                                    "text": "Excavator"
-                                },
-                                {
-                                    "value": "Crane",
-                                    "text": "Crane"
-                                },
-                                {
-                                    "value": "Small Forklift",
-                                    "text": "Small Forklift"
-                                },
-                                {
-                                    "value": "Forklift Yard",
-                                    "text": "Forklift Yard"
-                                },
-                                {
-                                    "value": "Grapple_Loader_Log Yard",
-                                    "text": "Grapple Loader Log Yard"
-                                },
-                                {
-                                    "value": "Bucket Loader",
-                                    "text": "Bucket Loader"
-                                },
-                                {
-                                    "value": "Other",
-                                    "text": "Other"
-                                }
-                            ],
-                            "colCount": 2,
-                            "hasNone": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "OtherEquipment",
-                            "visible": false,
-                            "visibleIf": "{EquimentsTrained} contains \"Other\"",
-                            "title": "Other Equipment:"
-                        },
-                        {
-                            "type": "checkbox",
-                            "name": "Certifications",
-                            "title": "Certifications or tickets that you hold",
-                            "isRequired": true,
-                            "hasOther": true,
-                            "choices": [
-                                {
-                                    "value": "FirstAid",
-                                    "text": "First Aid"
-                                },
-                                "Welding",
-                                {
-                                    "value": "H2SAlive",
-                                    "text": "H2S Alive"
-                                },
-                                "WHMIS",
-                                {
-                                    "value": "Confined_Space_Awareness",
-                                    "text": "Confined Space Awareness"
-                                },
-                                {
-                                    "value": "Chain_Saw_Safety",
-                                    "text": "Chain Saw Safety"
-                                },
-                                {
-                                    "value": "S100_Basic_Fire_Suppression_Safety",
-                                    "text": "S-100 Basic Fire Suppression & Safety"
-                                },
-                                {
-                                    "value": "S185_Fire_Suppression_Safety",
-                                    "text": "S-185 Fire Suppression & Safety"
-                                }
-                            ],
-                            "colCount": 2,
-                            "hasNone": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "FirstAidLevel",
-                            "visibleIf": "{Certifications} contains \"FirstAid\"",
-                            "title": "First Aid Level:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "WeldingLevel",
-                            "visibleIf": "{Certifications} contains \"Welding\"",
-                            "title": "Welding Level:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "checkbox",
-                            "name": "ExperienceArea",
-                            "title": "Experience in the following areas (at current or previous employment):",
-                            "isRequired": true,
-                            "choices": [
-                                {
-                                    "value": "Planer",
-                                    "text": "Planer"
-                                },
-                                {
-                                    "value": "Sawmill",
-                                    "text": "Sawmill"
-                                },
-                                {
-                                    "value": "Log Yard",
-                                    "text": "Log Yard"
-                                },
-                                {
-                                    "value": "Energy Plant",
-                                    "text": "Energy Plant"
-                                },
-                                {
-                                    "value": "Kilns",
-                                    "text": "Kilns"
-                                }
-                            ],
-                            "colCount": 2,
-                            "hasNone": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "YrsOfPlaner",
-                            "visible": false,
-                            "visibleIf": "{ExperienceArea} contains \"Planer\"",
-                            "title": "Planer: Number of Years",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "YrsOfSawmill",
-                            "visible": false,
-                            "visibleIf": "{ExperienceArea} contains \"Sawmill\"",
-                            "title": "Sawmill: Number of Years"
-                        },
-                        {
-                            "type": "text",
-                            "name": "YrsOfLogYard",
-                            "visibleIf": "{ExperienceArea} contains \"Log Yard\"",
-                            "title": "Log Yard: Number of Years"
-                        },
-                        {
-                            "type": "text",
-                            "name": "YrsOfEngergyPlant",
-                            "visible": false,
-                            "visibleIf": "{ExperienceArea} contains \"Energy Plant\"",
-                            "title": "Energy Plant: Number of Years"
-                        },
-                        {
-                            "type": "text",
-                            "name": "YrsOfKilns",
-                            "visible": false,
-                            "visibleIf": "{ExperienceArea} contains \"Kilns\"",
-                            "title": "Kilns: Number of Years"
-                        },
-                        {
-                            "type": "checkbox",
-                            "name": "DrivingExp",
-                            "title": "Driving training completed",
-                            "isRequired": true,
-                            "choices": [
-                                {
-                                    "value": "Class5",
-                                    "text": "Class 5"
-                                },
-                                {
-                                    "value": "Class3",
-                                    "text": "Class 3"
-                                },
-                                {
-                                    "value": "Class1",
-                                    "text": "Class 1"
-                                },
-                                {
-                                    "value": "AirEndorsement",
-                                    "text": "Air Endorsement"
-                                },
-                                {
-                                    "value": "Other",
-                                    "text": "Other"
-                                }
-                            ],
-                            "colCount": 2,
-                            "hasNone": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "OtherDrivingTraining",
-                            "visible": false,
-                            "visibleIf": "{DrivingExp} contains \"Other\"",
-                            "title": "Other driving training:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "checkbox",
-                            "name": "SawmillTrained",
-                            "title": "Sawmill/Planer - trained or certified to operate (at current of previous employment)",
-                            "isRequired": true,
-                            "choices": [
-                                {
-                                    "value": "Lumber Stacker",
-                                    "text": "Lumber Stacker"
-                                },
-                                {
-                                    "value": "J Bar Operator",
-                                    "text": "J Bar Operator"
-                                },
-                                {
-                                    "value": "Chipper Operator",
-                                    "text": "Chipper Operator"
-                                },
-                                {
-                                    "value": "Paint Booth",
-                                    "text": "Paint Booth"
-                                },
-                                {
-                                    "value": "Edger Operator",
-                                    "text": "Edger Operator"
-                                },
-                                {
-                                    "value": "Chip car Attendant",
-                                    "text": "Chip car Attendant"
-                                },
-                                {
-                                    "value": "Tilt Host Feeder",
-                                    "text": "Tilt Host Feeder"
-                                },
-                                {
-                                    "value": "Barker Operator",
-                                    "text": "Barker Operator"
-                                },
-                                {
-                                    "value": "Logging Skidder",
-                                    "text": "Logging Skidder"
-                                },
-                                {
-                                    "value": "Planer Feeder",
-                                    "text": "Planer Feeder"
-                                },
-                                {
-                                    "value": "Clean Up",
-                                    "text": "Clean Up"
-                                },
-                                {
-                                    "value": "Log Processer",
-                                    "text": "Log Processer"
-                                },
-                                {
-                                    "value": "Lumber Grader/Trimmer",
-                                    "text": "Lumber Grader/Trimmer"
-                                },
-                                {
-                                    "value": "General Labour",
-                                    "text": "General Labour"
-                                },
-                                {
-                                    "value": "Head Rig Operator",
-                                    "text": "Head Rig Operator"
-                                },
-                                {
-                                    "value": "Other",
-                                    "text": "Other"
-                                }
-                            ],
-                            "colCount": 3,
-                            "hasNone": true
-                        },
-                        {
-                            "type": "text",
-                            "name": "OtherSawmillTraining",
-                            "visible": false,
-                            "visibleIf": "{SawmillTrained} contains \"Other\"",
-                            "title": "Other training:",
-                            "isRequired": true
-                        },
-                        {
-                            "type": "checkbox",
-                            "name": "HobbiesInterests",
-                            "title": "Do you have skills from your hobbies or interests that could be transferred to a new job or role, such as:",
-                            "isRequired": true,
-                            "choices": [
-                                {
-                                    "value": "Plumbing",
-                                    "text": "Plumbing"
-                                },
-                                {
-                                    "value": "Electrical",
-                                    "text": "Electrical"
-                                },
-                                {
-                                    "value": "Carpentry",
-                                    "text": "Carpentry"
-                                },
-                                {
-                                    "value": "Wood framing structures",
-                                    "text": "Wood framing structures"
-                                },
-                                {
-                                    "value": "Automotive repair",
-                                    "text": "Automotive repair"
-                                },
-                                {
-                                    "value": "Machinery repair",
-                                    "text": "Machinery repair"
-                                },
-                                {
-                                    "value": "Welding",
-                                    "text": "Welding"
-                                },
-                                {
-                                    "value": "Concrete",
-                                    "text": "Concrete"
-                                },
-                                {
-                                    "value": "Other",
-                                    "text": "Other"
-                                }
-                            ],
-                            "colCount": 3,
-                            "hasNone": true
-                        },
-                        {
-                            "type": "multipletext",
-                            "name": "OtherTransferableSkills",
-                            "visible": false,
-                            "visibleIf": "{HobbiesInterests} contains \"Other\"",
-                            "title": "Other transferable skills:",
-                            "items": [
-                                {
-                                    "name": "OtherHobbyWan",
-                                    "title": "Other:"
-                                },
-                                {
-                                    "name": "OtherHobbyTwo",
-                                    "title": "Other:"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "title": "Your experience"
+          "type": "panel",
+          "name": "IsListedPanel",
+          "elements": [
+            {
+              "type": "boolean",
+              "name": "isListed",
+              "title": "Is the cloud service you are considering listed and explained on the DevHub (https://developer.gov.bc.ca)?",
+              "isRequired": true
+            }
+          ]
         }
-    ],
-    "triggers": [
+      ],
+      "title": "Get Started"
+    },
+    {
+      "name": "Expected Cost",
+      "elements": [
         {
-            "type": "setvalue",
-            "expression": "{Certifications} contains \"None of the above\" and {Certifications} = [{},\"None of the above\"]",
-            "setToName": "Certifications"
+          "type": "panel",
+          "name": "CostPanel",
+          "elements": [
+            {
+              "type": "html",
+              "name": "solutionTypes",
+              "html": "<div class='solutionTypes'><div class='solutionType'>Type 1: A Complete Turnkey Business Solution</div><div class='solutionType'>Type 2: A cloud service that is consumed by a Digital-Micro- Service Component of a Business Solution</div><div class='solutionType'>Type 3: A Tool or Service used by a digital delivery team</div></div>"
+            },
+            {
+              "type": "boolean",
+              "name": "lessThanExpenseLimit",
+              "title": "Considering the type of cloud service it is, will the annual subscription, contract or license expense be less than $75k?",
+              "isRequired": true
+            }
+          ]
         }
-    ],
-    "showQuestionNumbers": "off",
-    "requiredText": ""
+      ],
+      "title": "Expected Cost"
+    },
+    {
+      "name": "Compliance",
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "isCompliant",
+          "title": "Is it clear that: a) The terms of use/service are legal, and \nb) the cloud service complies with financial management requirements for billing, payment and cost accounting, and c) the cloud service may be used with production workloads, and if relevant, may involve personal information?",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "Community Endorsement",
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "isCommunityEndorsed",
+          "title": "Did you add the cloud service to developer.gov.bc.ca and was your listing accepted?"
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "type": "complete",
+      "expression": "{isListed} = 'y'"
+    },
+    {
+      "type": "complete",
+      "expression": "{lessThanExpenseLimit} = 'n'"
+    },
+    {
+      "type": "complete",
+      "expression": "{isCompliant} = 'n'"
+    }
+  ],
+  "completedHtml": "<h2>Thanks for playing!</h2>",
+  "completedHtmlOnCondition": [
+    {
+      "expression": "{isListed} = 'y'",
+      "html": "<h2>You're good to go!</h2>"
+    },
+    {
+      "expression": "{lessThanExpenseLimit} = 'n'",
+      "html": "<h2>Nope, you're spending too much on this.</h2>"
+    },
+    {
+      "expression": "{isCompliant} = 'n'",
+      "html": "<h2>Doh! Do not pass go, do not collect $200!</h2>"
+    }
+  ]
+  ,
+  "showQuestionNumbers": "off",
+  "requiredText": ""
 }

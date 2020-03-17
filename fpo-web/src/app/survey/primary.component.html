@@ -1,16 +1,35 @@
 <div class="container survey-content survey-primary">
 
-  <div class="row">
-    <div class="col-md-12" *ngIf="! printUrl">
-      <survey [surveyPath]="surveyPath" [surveyJson]="surveyJson" [cacheName]="cacheName" [onComplete]="complete" [showSidebar]="showSidebar" [initialMode]="initialMode"></survey>
-    </div>
-    <div class="col-md-12" *ngIf="printUrl">
-      <h2>You have completed the form</h2>
-      <!-- <form method="post" [action]="printUrl" target="_blank" ngNoForm class="mrgn-tp-lg">
-        <input name="data" type="hidden" [value]="resultJson"> -->
-        <button type="button" class="btn btn-default btn-lg" (click)="submitPoster()"><span class="fa fa-print btn-icon-left"></span> Submit Your Application</button>
-      <!-- </form> -->
+  <div class="row" *ngIf="! resultKnown">
+<!--  <div class="row">-->
+    <div class="col-md-12">
+      <survey [surveyPath]="surveyPath" [surveyJson]="surveyJson" [cacheName]="cacheName" [onComplete]="complete"
+              [showSidebar]="showSidebar" [initialMode]="initialMode"></survey>
     </div>
   </div>
-
+  <div class="row" *ngIf="resultKnown">
+    <div class="col-md-12" *ngIf="alreadyListed">
+      <h2>Great!</h2>
+      So just follow the guidance and procedures as set out at developer.gov.bc.ca. Also, adhere to the digital
+      principles, code of practice, common components, service patterns, architecture and solution design patterns.
+    </div>
+    <div class="col-md-12" *ngIf="communityEndorsed">
+      <h2>Great!</h2>
+      Cloud service is now listed @ developer.gov.bc.ca —> goto step 1!
+    </div>
+    <div class="col-md-12" *ngIf="exceededExpenseLimit">
+      <h2>Ruh-roh!</h2>
+      Expense greater than $75k; So do the stuff to resolve the requirement to conduct a trade agreement compliant
+      process – hopefully in a way that makes it listed at developer.gov.bc.ca so its easy for the next time this same
+      cloud service is needed.
+    </div>
+    <div class="col-md-12" *ngIf="unknownCompliance">
+      <h2>Ruh-roh!</h2>
+      Compliance is unknown -> Do the stuff to make it clear that it complies....
+    </div>
+    <div class="col-md-12" *ngIf="notCommunityEndorsed">
+      <h2>Ruh-roh!</h2>
+      Cloud service does not comply -> You may not use the cloud service or tool.
+    </div>
+  </div>
 </div>
