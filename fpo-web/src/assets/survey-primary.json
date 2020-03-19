@@ -9,7 +9,7 @@
           "name": "IsListedPanel",
           "elements": [
             {
-              "type": "boolean",
+              "type": "yesno",
               "name": "isListed",
               "title": "Is the cloud service you are considering listed and explained on the DevHub (https://developer.gov.bc.ca)?",
               "isRequired": true
@@ -32,7 +32,7 @@
               "html": "<div class='solutionTypes'><div class='solutionType'>Type 1: A Complete Turnkey Business Solution</div><div class='solutionType'>Type 2: A cloud service that is consumed by a Digital-Micro- Service Component of a Business Solution</div><div class='solutionType'>Type 3: A Tool or Service used by a digital delivery team</div></div>"
             },
             {
-              "type": "boolean",
+              "type": "yesno",
               "name": "lessThanExpenseLimit",
               "title": "Considering the type of cloud service it is, will the annual subscription, contract or license expense be less than $75k?",
               "isRequired": true
@@ -46,7 +46,7 @@
       "name": "Compliance",
       "elements": [
         {
-          "type": "boolean",
+          "type": "yesno",
           "name": "isCompliant",
           "title": "Is it clear that: a) The terms of use/service are legal, and \nb) the cloud service complies with financial management requirements for billing, payment and cost accounting, and c) the cloud service may be used with production workloads, and if relevant, may involve personal information?",
           "isRequired": true
@@ -57,7 +57,7 @@
       "name": "Community Endorsement",
       "elements": [
         {
-          "type": "boolean",
+          "type": "yesno",
           "name": "isCommunityEndorsed",
           "title": "Did you add the cloud service to developer.gov.bc.ca and was your listing accepted?"
         }

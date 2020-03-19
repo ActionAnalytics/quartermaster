@@ -24,7 +24,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { SurveyComponent } from './survey/survey.component';
 import { SurveyPrimaryComponent } from './survey/primary.component';
-import { SurveyEditorComponent } from './survey/editor.component';
 import { SurveySidebarComponent } from './survey/sidebar.component';
 import { ResultComponent } from './result/result.component';
 import { SuccessPageComponent } from './survey/success-page/success-page.component';
@@ -41,7 +40,6 @@ import { SuccessPageComponent } from './survey/success-page/success-page.compone
     InsertComponent,
     SurveyComponent,
     SurveyPrimaryComponent,
-    SurveyEditorComponent,
     SurveySidebarComponent,
     StaticComponent,
     TermsContentComponent,

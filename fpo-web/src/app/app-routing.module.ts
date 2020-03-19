@@ -1,20 +1,17 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from 'app/home/home.component';
-import { ResultComponent } from 'app/result/result.component';
-import { GlossaryEditorComponent } from 'app/glossary/editor.component';
-import { SurveyPrimaryComponent } from 'app/survey/primary.component';
-import { SurveyResolver }   from 'app/survey/survey-resolver.service';
-import { SurveyEditorComponent } from 'app/survey/editor.component';
-import { TermsViewComponent } from 'app/home/terms.component';
-import { UserStatusComponent } from 'app/home/status.component';
-import { UserStatusResolver }   from 'app/home/status-resolver.service';
-import { SuccessPageComponent } from 'app/survey/success-page/success-page.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {HomeComponent} from 'app/home/home.component';
+import {ResultComponent} from 'app/result/result.component';
+import {SurveyPrimaryComponent} from 'app/survey/primary.component';
+import {SurveyResolver} from 'app/survey/survey-resolver.service';
+import {TermsViewComponent} from 'app/home/terms.component';
+import {UserStatusComponent} from 'app/home/status.component';
+import {UserStatusResolver} from 'app/home/status-resolver.service';
+import {SuccessPageComponent} from 'app/survey/success-page/success-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    //children: []
     component: HomeComponent
   },
   {
@@ -50,28 +47,9 @@ const routes: Routes = [
     path: 'glossary-editor',
     redirectTo: 'prv/glossary-editor'
   },
-  // {  //This route has been disabled. It is a feature that was apart of the originating fork of the repo [https://github.com/bcgov/Family-Protection-Order] and is not being leveraged. The route exposes a feature of glossary-editor that allows user to edit glossary definary that used in survey.
-  //   path: 'prv/glossary-editor',
-  //   component: GlossaryEditorComponent,
-  //   data: {
-  //     breadcrumb: 'Glossary Editor',
-  //   }
-  // },
   {
     path: 'survey-editor',
     redirectTo: 'prv/survey-editor'
-  },
-  {
-    path: 'prv/survey-editor',
-    component: SurveyEditorComponent,
-    resolve: {
-      // survey: SurveyResolver,
-    },
-    data: {
-      breadcrumb: 'Survey Editor',
-      cache_name: 'editor',
-      survey_path: 'assets/survey-primary.json'
-    }
   },
   {
     path: 'prv/status',
@@ -119,4 +97,5 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [SurveyResolver]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
