@@ -1,0 +1,114 @@
+{
+  "title": "Cloud Conformance Survey",
+  "pages": [
+    {
+      "name": "Get Started",
+      "title": "Get Started",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "IsListedPanel",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "customCode",
+              "title": "Will the cloud-hosted system being proposed involve custom code development?",
+              "isRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Open Source",
+      "visibleIf": "{customCode} = 'y'",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "OpenSourcePanel",
+          "title": "Custom Code License",
+          "elements": [
+            {
+              "type": "yesno",
+              "name": "codeIsOpenSource",
+              "title": "Will the custom source code be made available under an open source license?",
+              "isRequired": true
+            },
+            {
+              "type": "dropdown",
+              "name": "license",
+              "title": "Under what license will custom code be made available?",
+              "isRequired": true,
+              "visibleIf": "{codeIsOpenSource} = 'y'",
+              "colCount": 0,
+              "choices": [
+                "Apache 2.0",
+                "MIT",
+                "GPL",
+                "AGPL",
+                "Other"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Car Stuff",
+      "title": "Car Choice",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "car",
+          "title": "What car are you driving?",
+          "isRequired": true,
+          "colCount": 4,
+          "choices": [
+            "None",
+            "Ford",
+            "Vauxhall",
+            "Volkswagen",
+            "Nissan",
+            "Audi",
+            "Mercedes-Benz",
+            "BMW",
+            "Peugeot",
+            "Toyota",
+            "Citroen"
+          ]
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "type": "complete",
+      "expression": "{isListed} = 'y'"
+    },
+    {
+      "type": "complete",
+      "expression": "{lessThanExpenseLimit} = 'n'"
+    },
+    {
+      "type": "complete",
+      "expression": "{isCompliant} = 'n'"
+    }
+  ],
+  "completedHtml": "<h2>Thanks for playing!</h2>",
+  "completedHtmlOnCondition": [
+    {
+      "expression": "{isListed} = 'y'",
+      "html": "<h2>You're good to go!</h2>"
+    },
+    {
+      "expression": "{lessThanExpenseLimit} = 'n'",
+      "html": "<h2>Nope, you're spending too much on this.</h2>"
+    },
+    {
+      "expression": "{isCompliant} = 'n'",
+      "html": "<h2>Doh! Do not pass go, do not collect $200!</h2>"
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "requiredText": ""
+}

@@ -1,5 +1,5 @@
 {
-  "title": "Cloud Solution Explorer",
+  "title": "Cloud Conformance Survey",
   "pages": [
     {
       "name": "Get Started",
@@ -11,7 +11,7 @@
             {
               "type": "yesno",
               "name": "isListed",
-              "title": "Is the cloud service you are considering listed and explained on the DevHub (https://developer.gov.bc.ca)?",
+                "title": "Is the cloud service you are considering listed and explained on the DevHub (https://developer.gov.bc.ca)?",
               "isRequired": true
             }
           ]

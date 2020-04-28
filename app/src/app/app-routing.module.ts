@@ -31,9 +31,8 @@ const routes: Routes = [
       // survey: SurveyResolver,
     },
     data: {
-      breadcrumb: 'Provincial Family Test',
       cache_name: 'primary',
-      survey_path: 'assets/survey-primary.json',
+      survey_path: 'assets/survey-conformance.json',
     }
   },
   {
