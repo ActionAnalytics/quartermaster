@@ -1,114 +1,225 @@
 {
   "title": "Cloud Conformance Survey",
   "pages": [
+
     {
-      "name": "Get Started",
-      "title": "Get Started",
-      "elements": [
-        {
-          "type": "panel",
-          "name": "IsListedPanel",
-          "elements": [
-            {
-              "type": "yesno",
-              "name": "customCode",
-              "title": "Will the cloud-hosted system being proposed involve custom code development?",
-              "isRequired": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Open Source",
-      "visibleIf": "{customCode} = 'y'",
-      "elements": [
-        {
-          "type": "panel",
-          "name": "OpenSourcePanel",
-          "title": "Custom Code License",
-          "elements": [
-            {
-              "type": "yesno",
-              "name": "codeIsOpenSource",
-              "title": "Will the custom source code be made available under an open source license?",
-              "isRequired": true
-            },
-            {
-              "type": "dropdown",
-              "name": "license",
-              "title": "Under what license will custom code be made available?",
-              "isRequired": true,
-              "visibleIf": "{codeIsOpenSource} = 'y'",
-              "colCount": 0,
-              "choices": [
-                "Apache 2.0",
-                "MIT",
-                "GPL",
-                "AGPL",
-                "Other"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Car Stuff",
-      "title": "Car Choice",
+      "name": "Code",
+      "title": "Code",
       "elements": [
         {
           "type": "radiogroup",
-          "name": "car",
-          "title": "What car are you driving?",
+          "name": "dnwxhyia",
+          "title": "Is the code Open?",
           "isRequired": true,
-          "colCount": 4,
+
           "choices": [
-            "None",
-            "Ford",
-            "Vauxhall",
-            "Volkswagen",
-            "Nissan",
-            "Audi",
-            "Mercedes-Benz",
-            "BMW",
-            "Peugeot",
-            "Toyota",
-            "Citroen"
+            {
+              "value": 1,
+              "text": "No, either proprietary or unknown"
+            },
+            {
+              "value": 2,
+              "text": "Closed source until launch/ go live - then open"
+            },
+            {
+              "value": 3,
+              "text": "Open Sourced. Bonus for residing in github.com/bcgov"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "ftyjtnps",
+          "title": "Is the code using open frameworks the BCDevOps community is familiar with?",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "No; either niche/ esoteric, proprietary or legacy/ unsupported"
+            },
+            {
+              "value": 2,
+              "text": "Open frameworks with downward trends in popularity."
+            },
+            {
+              "value": 3,
+              "text": "Open frameworks with upward trends in popularity."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Process",
+      "title": "Process",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "mrukyekl",
+          "title": "Is the build and deployment process automated?",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "No, all manual."
+            },
+            {
+              "value": 2,
+              "text": "Some automation but manual intervention needed"
+            },
+            {
+              "value": 3,
+              "text": "Full automation including test and security"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "juzzyzms",
+          "title": "Is public cloud resource provisioning scripted?",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "No, all manual through the cloud provider console"
+            },
+            {
+              "value": 2,
+              "text": "Some cloud console access needed"
+            },
+            {
+              "value": 3,
+              "text": "Full infrastructure provisioning as code and versioned with the application"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "eqtntrwg",
+          "title": "Is the full lifecycle of the application in scope?",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "No. Only concerned about development and deployment"
+            },
+            {
+              "value": 2,
+              "text": "Some attention to logging, resilience, monitoring, security, updates and patches has been planned/implemented but many processes are manual"
+            },
+            {
+              "value": 3,
+              "text": "Full lifecycle is automated. Including: logging, resilience, monitoring, security, updates and patches"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Team",
+      "title": "Team",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "tktibnyl",
+          "title": "Who is the Product owner?",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "A proxy owner, consultant or executive with limited contact with team"
+            },
+            {
+              "value": 2,
+              "text": "A part time government resource who may have other responsibilities"
+            },
+            {
+              "value": 3,
+              "text": "A dedicated government resource"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "udygnbmr",
+          "title": "Does the team have cross functional roles defined that covers: Scrum Master,  UX Researcher,  UX Designer, Developer  (Solution Architect, Back end,  Middle tier,  Front end),  DevOps Specialist/ SRE",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "3 or more roles filled external to team (people on some other team) OR 3 or more roles assigned to a single team member"
+            },
+            {
+              "value": 2,
+              "text": "At least 6 roles covered and clearly assigned to named team members.  AND  No more than 2 roles filled by external to team resources. AND No more than 2 roles assigned to a single team member."
+            },
+            {
+              "value": 3,
+              "text": "All 8 roles covered and clearly assigned to named dedicated team members AND No more than 2 roles assigned to a single team member."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Technology Alignment",
+      "title": "Technology Alignment",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "tcyjtdhg",
+          "title": "Is the application Cloud Native?",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "No. Monolithic architecture or requiring VM’s and stateful infrastructure"
+            },
+            {
+              "value": 2,
+              "text": "Container deployment, some API’s. Stateful back end."
+            },
+            {
+              "value": 3,
+              "text": "API’s, Container and or serverless run time, stateless infrastructure"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "vulhnokt",
+          "title": "Does the pipeline, app components and run time environment use common BCGov tools and resources?",
+          "isRequired": true,
+
+          "choices": [
+            {
+              "value": 1,
+              "text": "No. Bespoke, proprietary of uses tool/ components not adopted by the BCDevOps community"
+            },
+            {
+              "value": 2,
+              "text": "Some alignment with exceptions that are well understood and justified"
+            },
+            {
+              "value": 3,
+              "text": "The full stack is well understood and aligned with the BCDevOps common practices."
+            }
           ]
         }
       ]
     }
   ],
-  "triggers": [
-    {
-      "type": "complete",
-      "expression": "{isListed} = 'y'"
-    },
-    {
-      "type": "complete",
-      "expression": "{lessThanExpenseLimit} = 'n'"
-    },
-    {
-      "type": "complete",
-      "expression": "{isCompliant} = 'n'"
-    }
-  ],
   "completedHtml": "<h2>Thanks for playing!</h2>",
-  "completedHtmlOnCondition": [
-    {
-      "expression": "{isListed} = 'y'",
-      "html": "<h2>You're good to go!</h2>"
-    },
-    {
-      "expression": "{lessThanExpenseLimit} = 'n'",
-      "html": "<h2>Nope, you're spending too much on this.</h2>"
-    },
-    {
-      "expression": "{isCompliant} = 'n'",
-      "html": "<h2>Doh! Do not pass go, do not collect $200!</h2>"
-    }
-  ],
   "showQuestionNumbers": "off",
   "requiredText": ""
 }
