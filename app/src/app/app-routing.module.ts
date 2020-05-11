@@ -8,6 +8,7 @@ import {TermsViewComponent} from 'app/home/terms.component';
 import {UserStatusComponent} from 'app/home/status.component';
 import {UserStatusResolver} from 'app/home/status-resolver.service';
 import {SuccessPageComponent} from 'app/survey/success-page/success-page.component';
+import {CanvasComponent} from "./canvas/canvas.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'submission-confirmation',
     component: SuccessPageComponent
+  },
+  {
+    path: 'canvas',
+    component: CanvasComponent
   },
   {
     path: 'prv',

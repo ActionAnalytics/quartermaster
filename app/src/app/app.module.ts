@@ -27,6 +27,7 @@ import { SurveyPrimaryComponent } from './survey/primary.component';
 import { SurveySidebarComponent } from './survey/sidebar.component';
 import { ResultComponent } from './result/result.component';
 import { SuccessPageComponent } from './survey/success-page/success-page.component';
+import { CanvasComponent} from './canvas/canvas.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { SuccessPageComponent } from './survey/success-page/success-page.compone
     TermsViewComponent,
     UserStatusComponent,
     SuccessPageComponent,
+    CanvasComponent
   ],
   imports: [
     BrowserModule,
