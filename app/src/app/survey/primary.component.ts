@@ -22,11 +22,7 @@ export class SurveyPrimaryComponent implements OnInit {
 
   // survey outcomes
   public resultKnown = false;
-  public alreadyListed = false;
-  public communityEndorsed = false;
-  public exceededExpenseLimit = false;
-  public unknownCompliance = false;
-  public notCommunityEndorsed = true;
+  public radarData = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -63,11 +59,9 @@ export class SurveyPrimaryComponent implements OnInit {
   determineResult(data) {
     console.log('resultJson is: ' + data);
 
-    this.alreadyListed = data.isListed === 'y';
-    this.unknownCompliance = data.isCompliant === 'n';
-    this.communityEndorsed = data.isCommunityEndorsed === 'y';
-    this.notCommunityEndorsed = data.isCommunityEndorsed === 'n';
-    this.exceededExpenseLimit = data.lessThanExpenseLimit === 'n'
+    this.radarData =  [
+      {data: [100, 100, 100, 100], label: 'The A Team'}
+    ];
 
     this.resultKnown = true;
 
